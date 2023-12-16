@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: package1.loginTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.035 sec <<< FAILURE!
+login(package1.loginTest)  Time elapsed: 0.014 sec  <<< FAILURE!
+java.lang.NullPointerException: inStream parameter is null
+	at java.base/java.util.Objects.requireNonNull(Objects.java:246)
+	at java.base/java.util.Properties.load(Properties.java:407)
+	at package1.loginTest.login(loginTest.java:16)
+

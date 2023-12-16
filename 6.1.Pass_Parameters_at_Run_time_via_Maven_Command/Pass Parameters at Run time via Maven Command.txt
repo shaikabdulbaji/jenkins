@@ -1,0 +1,62 @@
+14. How to pass Parameters at Run time via Maven Command |Pass  username & password to Selenium testcase.
+
+1. Create a Maven Project
+2. Add some dependencies in pom.xml
+3. Add properties in the pom.xml
+
+
+ -Create 2 properties
+<!-- Send Values for username and password at run time while running Maven command -->
+<properties>
+	<username>default_USERNAME</username>
+	<password>default_PASSWORD</password>
+</properties>
+
+koni koni sarlu already properties aneavi untai pom.xml file lo danilo merge chaiyali e two properties ni
+<properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.source>1.7</maven.compiler.source>
+	<maven.compiler.target>1.7</maven.compiler.target>
+		
+<!-- Send Values for username and password at run time while running Maven command -->		
+	<username>default_USERNAME</username>
+	<password>default_PASSWORD</password>
+</properties>
+
+
+4. Define testResources and provide directory value where properties file is present and Set Filtering= true
+<!-- Send Values for username and password at run time while running Maven command -->
+	
+	<properties>
+		<username>default_USERNAME</username>
+		<password>default_PASSWORD</password>
+	</properties>
+	
+ 	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</testResource>
+		</testResources>
+
+	</build>
+
+5. Create a properties file under src/test/resources
+
+6. Read that properties file and fetch data and use in testcases
+
+7. Run the Maven Project and pass values along with mvn cmd
+
+mvn -Dusername=AgentHunt -Dpassword=MissionImpossible clean install
